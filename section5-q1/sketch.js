@@ -4,15 +4,17 @@
 function setup(){
   createCanvas(400, 400);
   background(255);
-  balloon("I love keyakizaka46");
+  balloon("I love BTS, SEVENTEEN and Hinatazaka46");
 }
 
 function balloon(t){
-  let w = textWidth(t);
-  let h = textAscent() + textDescent();
-  let p = 2;
+  let w = textWidth(t);//文字列の幅
+  let h = textAscent() + textDescent();//文字の高さ
+  let p = 100;
   fill(0);
   rect(0, 0, w + p * 2, h + p * 2);
+  fill(218,195,250);
+  ellipse(p*2, h+p, w+p, h+p);
   fill(255);
   text(t, p, h + p);
 }
