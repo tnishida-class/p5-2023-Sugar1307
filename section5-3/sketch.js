@@ -27,6 +27,8 @@ function isLeapYear(y){
 
 function daysInYear(y){
   // BLANK[1]
+  if(isLeapYear(y)){return 366;}
+  else{return 365;}
 }
 
 function daysInMonth(y, m){
@@ -51,6 +53,14 @@ function dayOfYear(y, m, d){
 
 function dayOfWeek(y, m, d){
   // BLANK[2]
+  let count = 3; //1970年1月1日は４。後で１たすから３にしておく
+  for(i = 1970; i < y; i++){
+    count += daysInYear(y);
+  }
+  count += dayOfYear(y,m,d);
+  dw = count % 7
+  console.log(dw);
+
 }
 
 function dayOfWeekAsString(dow){
